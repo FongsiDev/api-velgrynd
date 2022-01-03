@@ -791,6 +791,12 @@ router.get("/google", async (req, res, next) => {
 });
 router.get("/ff", async (req, res) => {
   let query = req.query.player_id;
+  if(!query.player_id) 
+    return res.json({
+      status: false,
+      creator: `${creator}`,
+      message: "masukan parameter player_id=<id>,
+    });
   let result = await fetch("https://api.bayarlistrik.com/wp-json/cart/result", {
     headers: {
       accept: "application/json, text/javascript, */*; q=0.01",
@@ -819,6 +825,18 @@ router.get("/ff", async (req, res) => {
 });
 router.get("/ml", async (req, res) => {
   let query = req.query;
+  if(!query.player_id) 
+    return res.json({
+      status: false,
+      creator: `${creator}`,
+      message: "masukan parameter player_id=<id>,
+    });
+  if(!query.server_id) 
+    return res.json({
+      status: false,
+      creator: `${creator}`,
+      message: "masukan parameter server_id=<id>,
+    });
   let result = await fetch("https://api.bayarlistrik.com/wp-json/cart/result", {
   "headers": {
     "accept": "application/json, text/javascript, */*; q=0.01",
