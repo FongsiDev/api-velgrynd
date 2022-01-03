@@ -806,7 +806,7 @@ router.get("/ff", async (req, res) => {
     },
     referrer: "/",
     referrerPolicy: "strict-origin-when-cross-origin",
-    body: `player_id=${query}&cart_price=8000&payment=qris&category=free-fire&sku_code=FF50&cart_name=FF+50+Diamond`,
+    body: `player_id=${query.id}&cart_price=8000&payment=qris&category=free-fire&sku_code=FF50&cart_name=FF+50+Diamond`,
     method: "POST",
     mode: "cors",
     credentials: "omit",
