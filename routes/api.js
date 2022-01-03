@@ -790,7 +790,7 @@ router.get("/google", async (req, res, next) => {
   });
 });
 router.get("/ff", async (req, res) => {
-  let query = req.query.query;
+  let query = req.query.id;
   let result = await fetch("https://api.bayarlistrik.com/wp-json/cart/result", {
     headers: {
       accept: "application/json, text/javascript, */*; q=0.01",
