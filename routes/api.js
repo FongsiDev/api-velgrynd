@@ -814,7 +814,7 @@ router.get("/ff", async (req, res) => {
   res.json({
     status: 200,
     creator: `${creator}`,
-    FreeFire: `Nama: ${result.nickname}\nID: ${result.id}`,
+    FreeFire: `Nama: ${result.nickname}`,
   });
 });
 
