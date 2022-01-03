@@ -817,11 +817,19 @@ router.get("/ff", async (req, res) => {
     mode: "cors",
     credentials: "omit",
   }).then((x) => x.json());
-  res.json({
-    status: 200,
-    creator: `${creator}`,
-    FreeFire: `Nama: ${result.nickname} | Player ID: ${result.player_id}`,
-  });
+  if(!result.nickname.startsWith("NO/")) {
+  	res.json({
+		  status: 200,
+	    creator: `${creator}`,
+	    FreeFire: `Nama: ${result.nickname} | Player ID: ${result.player_id}`,
+	    });
+  } else {
+  	res.json({
+		  status: 200,
+	    creator: `${creator}`,
+	    FreeFire: `Player ini di telah di banned atau hilang | Player ID: ${result.player_id}`,
+	    });
+  }
 });
 router.get("/ml", async (req, res) => {
   let query = req.query;
