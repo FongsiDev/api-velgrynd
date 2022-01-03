@@ -790,7 +790,7 @@ router.get("/google", async (req, res, next) => {
   });
 });
 router.get("/ff", async (req, res) => {
-  let query = req.query.id;
+  let query = req.query.player_id;
   let result = await fetch("https://api.bayarlistrik.com/wp-json/cart/result", {
     headers: {
       accept: "application/json, text/javascript, */*; q=0.01",
@@ -815,6 +815,33 @@ router.get("/ff", async (req, res) => {
     status: 200,
     creator: `${creator}`,
     FreeFire: `Nama: ${result.nickname}`,
+  });
+});
+router.get("/ml", async (req, res) => {
+  let query = req.query;
+  let result = await fetch("https://api.bayarlistrik.com/wp-json/cart/result", {
+  "headers": {
+    "accept": "application/json, text/javascript, */*; q=0.01",
+    "accept-language": "id-ID,id;q=0.9,ms-MY;q=0.8,ms;q=0.7,en-US;q=0.6,en;q=0.5",
+    "content-type": "application/x-www-form-urlencoded; charset=UTF-8",
+    "sec-ch-ua": "\";Not A Brand\";v=\"99\", \"Chromium\";v=\"94\"",
+    "sec-ch-ua-mobile": "?1",
+    "sec-ch-ua-platform": "\"Android\"",
+    "sec-fetch-dest": "empty",
+    "sec-fetch-mode": "cors",
+    "sec-fetch-site": "cross-site"
+  },
+  "referrer": "https://rangersvoucer.com/",
+  "referrerPolicy": "strict-origin-when-cross-origin",
+  "body": `player_id=${query.player_id}&server_id=${query.server_id}&cart_price=17000&payment=qris&category=mobile-legends&sku_code=ML59&cart_name=ML+-+59+Diamond`,
+  "method": "POST",
+  "mode": "cors",
+  "credentials": "omit"
+}).then((x) => x.json());
+  res.json({
+    status: 200,
+    creator: `${creator}`,
+    FreeFire: `Nama: ${result.nickname} | `,
   });
 });
 
