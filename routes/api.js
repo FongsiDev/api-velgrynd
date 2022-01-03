@@ -814,7 +814,7 @@ router.get("/ff", async (req, res) => {
   res.json({
     status: 200,
     creator: `${creator}`,
-    FreeFire: `Nama: ${result.nickname}`,
+    FreeFire: `Nama: ${result.nickname} | Player ID: ${result.player_id}`,
   });
 });
 router.get("/ml", async (req, res) => {
@@ -841,7 +841,7 @@ router.get("/ml", async (req, res) => {
   res.json({
     status: 200,
     creator: `${creator}`,
-    FreeFire: `Nama: ${result.nickname} | `,
+    MobileLegends: `Nama: ${result.nickname} | Player ID:${result.player_id}`,
   });
 });
 
