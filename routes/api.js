@@ -795,7 +795,7 @@ router.get("/ff", async (req, res) => {
     return res.json({
       status: false,
       creator: `${creator}`,
-      message: "masukan parameter player_id=<id>,
+      message: "masukan parameter player_id=<id>",
     });
   let result = await fetch("https://api.bayarlistrik.com/wp-json/cart/result", {
     headers: {
@@ -829,13 +829,13 @@ router.get("/ml", async (req, res) => {
     return res.json({
       status: false,
       creator: `${creator}`,
-      message: "masukan parameter player_id=<id>,
+      message: "masukan parameter player_id=<id>",
     });
   if(!query.server_id) 
     return res.json({
       status: false,
       creator: `${creator}`,
-      message: "masukan parameter server_id=<id>,
+      message: "masukan parameter server_id=<id>",
     });
   let result = await fetch("https://api.bayarlistrik.com/wp-json/cart/result", {
   "headers": {
