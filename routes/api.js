@@ -791,7 +791,7 @@ router.get("/google", async (req, res, next) => {
 });
 router.get("/ff", async (req, res) => {
   let query = req.query.player_id;
-  if(!query.player_id) 
+  if(!query) 
     return res.json({
       status: false,
       creator: `${creator}`,
